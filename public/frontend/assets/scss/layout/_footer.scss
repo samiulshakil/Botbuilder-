@@ -1,0 +1,66 @@
+/* Footer Section Style */
+.footer{
+    &__top{
+        padding-top: toRem(310);
+        padding-bottom: 0;
+        @include tablet{
+            padding-top: toRem(100);
+        }
+        @include min-desktop{
+            padding-bottom: toRem(70);
+        }
+        background: url('../images/footer/footer.png') no-repeat center;
+        background-size: cover;
+    }
+    .navbar-brand{
+        &__image{
+            width: toRem(60);
+            height: toRem(60);
+        }
+        &__text{
+            color: $color-white;
+            @include light-mode{
+                color: $color-bg;
+            }
+            font-size: toRem(18);
+            font-weight: 500;
+            margin-left: toRem(10);
+            line-height: 1;
+            margin-top: toRem(3);
+        }
+    }
+    &__block{
+        &__title{
+            color: $color-white;
+            @include light-mode{
+                color: $color-bg;
+            }
+            font-size: toRem(20);
+        }
+        &__list{
+            line-height: 2;
+            &__link{
+                font-size: toRem(16);
+                &:hover,
+                &:focus-visible,
+                &:active{
+                    text-decoration: underline;
+                }
+                &__icon{
+                    color: $color-white;
+                    @include light-mode{
+                        color: $color-bg;
+                    }
+                    margin-right: toRem(10);
+                }
+            }
+        }
+    }
+    &__bottom{
+        padding: toRem(40) 0;
+        &__copyright,
+        &__text{
+            font-size: toRem(12);
+        }
+    }
+}

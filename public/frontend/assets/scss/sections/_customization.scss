@@ -1,0 +1,188 @@
+/* Character Customization Section Style */
+.customization{
+    position: relative;
+    padding-top: toRem(100);
+    @include tablet{
+        padding-bottom: toRem(100);
+    }
+    @include min-tablet{
+        padding-bottom: toRem(600);
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+        @include min-tablet{
+            max-height: toRem(1000);
+        }
+        background: url('../images/characters/bg/bot-bg.webp') no-repeat center;
+        background-size: cover;
+    }
+    &__title{
+        font-size: toRem(30);
+        @include min-tablet{
+            font-size: toRem(40);
+        }
+        @include min-desktop{
+            font-size: toRem(50);
+        }
+        @include min-desktop-lg{
+            font-size: toRem(60);
+        }
+    }
+    &__wrapper{
+        @media screen and (min-width: 1700px) {
+            max-width: 1770px;
+        }
+        .container{
+            max-width: 100%;
+        }
+        &__bg{
+            top: 0;
+            left: 0;
+            object-fit: fill;
+            @media screen and (max-width: 1700px) {
+                display: none;
+            }
+        }
+    }
+    &__character{
+        border-radius: inherit;
+        &-wrapper{
+            padding: 3px;
+			@extend %radius;
+			@extend %gradient-border;
+        }
+        &-canvas{
+            position: fixed;
+            top: -100%;
+            left: -100%;
+            transform: translate(-100%, -100%);
+            z-index: -9;
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+            user-select: none;
+        }
+        pointer-events: none;
+        user-select: none;
+        &__image{
+            max-width: toRem(300);
+        }
+    }
+    &__nav{
+        &-wrapper{
+            padding: 3px;
+			@extend %radius;
+			@extend %gradient-border;
+        }
+        background: url("../images/characters/bg/nav-bg.png") no-repeat center / cover;
+        border-radius: inherit;
+        padding: toRem(20);
+        .nav-link{
+            &__icon{
+                &-wrapper{
+                    width: toRem(65);
+                    height: toRem(65);
+                    padding: 2px;
+                    margin: auto;
+                    @extend %radius;
+                    @extend %gradient-border;
+                }
+                background: url("../images/characters/bg/nav-bg.png") no-repeat center / cover;
+                border-radius: inherit;
+            }
+            &.active{
+                color: $color-primary;
+                background-color: transparent;
+                .nav-link{
+                    &__icon{
+                        &-wrapper{
+                           background: $color-white;
+                        }
+                        background: $color-yellow;
+                    }
+                    &__image{
+                        filter: invert(0);
+                    }
+                    &__text{
+                        color: $color-yellow;
+                    }
+                }
+            }
+            &__image{
+                filter: invert(1);
+                max-width: toRem(30);
+            }
+            &__text{
+                color: $color-white;
+                font-family: $font-secondary;
+                font-size: toRem(16);
+                font-weight: 600;
+                letter-spacing: 2px;
+            }
+        }
+    }
+    &__tab{
+        &-content{
+            &-wrapper{
+                padding: 3px;
+                @extend %radius;
+                @extend %gradient-border;
+            }
+            background: url("../images/characters/bg/preview-bg.png") no-repeat center / cover;
+            border-radius: inherit;
+            padding: toRem(20);
+            &__list{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                @media only screen and (max-width: 319px) {
+                    grid-template-columns: 1fr;
+                }
+                @include min-mobile{
+                    grid-template-columns: 1fr 1fr 1fr;
+                }
+                @media screen and (min-width: 1700px) {
+                    grid-template-columns: 1fr 1fr 1fr 1fr;
+                }
+                gap: toRem(15);
+            }
+        }
+        &__card{
+            cursor: pointer;
+            border-radius: toRem(20);
+            background-color: transparent;
+            border: 1px solid transparent;
+            width: toRem(100);
+            height: toRem(100);
+            margin: auto;
+            padding: toRem(5);
+            @include mobile-xxs{
+                width: toRem(90);
+                height: toRem(90);
+            }
+            &.active{
+                background-color: $color-yellow;
+                border-color: $color-white;
+            }
+            &__image{
+                &--main{
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                }
+                max-width: toRem(90);
+                height: auto;
+                max-height: toRem(90);
+                object-fit: cover;
+                @include mobile-xxs{
+                    max-width: toRem(70);
+                    max-height: toRem(70);
+                }
+            }
+        }
+    }
+}

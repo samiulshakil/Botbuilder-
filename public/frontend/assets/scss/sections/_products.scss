@@ -1,0 +1,18 @@
+/* Products Section Style */
+.products{
+    padding: toRem(100) 0;
+    &__slide{
+        padding: 0 toRem(20);
+    }
+    &__card{
+        &-wrapper{
+            padding: 5px;
+			@extend %gradient-border;
+        }
+        background-color: $color-yellow;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        padding: toRem(10) toRem(50) toRem(10) toRem(35);
+    }
+}

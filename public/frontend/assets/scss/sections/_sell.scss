@@ -1,0 +1,35 @@
+/* Sell Section Style */
+.sell{
+	padding: toRem(50) 0;
+	&__card{
+		color: $color-text;
+		padding: toRem(50);
+		border: 2px solid #e9e9e9;
+		@extend %radius;
+		@extend %shadow;
+		&__text{
+			font-family: $font-secondary;
+			font-weight: 500;
+			font-size: toRem(16);
+			@include tablet{
+				text-align: center;
+			}
+			@include min-tablet{
+				font-size: toRem(24);
+			}
+		}
+		&__list{
+			&__image{
+				max-width: toRem(60);
+				max-height: toRem(60);
+				@include min-tablet{
+					max-width: toRem(108);
+					max-height: toRem(108);
+				}
+			}
+			.nav-list{
+				font-size: toRem(36)
+			}
+		}
+	}
+}

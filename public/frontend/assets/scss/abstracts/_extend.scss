@@ -1,0 +1,19 @@
+/* Common Transition Style */
+%transition{
+    transition: all linear .2s;
+}
+
+/* Common Box Shadow Style */
+%shadow{
+    box-shadow: 0 toRem(13) toRem(10) rgba($color: #000000, $alpha: 0.13);
+}
+
+/* Common Border Radius Style */
+%radius{
+    border-radius: toRem(30);
+}
+
+/* Common Font-Awesome font-family Style */
+%gradient-border{
+    background-image: linear-gradient( to top, #fee81d, #00a41d 33%, #ffe100 67%, #00ad1d 100%);
+}

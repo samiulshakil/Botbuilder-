@@ -1,0 +1,61 @@
+/* Team Section Style */
+.team{
+	padding-bottom: toRem(50);
+	&__title{
+		@include min-tablet{
+			font-size: toRem(60);
+		}
+	}
+	&__text{
+		color: $color-white;
+		@include min-tablet{
+			font-size: toRem(21);
+		}
+	}
+	&__card{
+		&__image{
+			&-wrapper{
+				@extend %gradient-border;
+				padding: 5px;
+				margin-bottom: toRem(30);
+				@include desktop{
+					width: toRem(200);
+					height: toRem(200);
+				}
+				@include min-desktop{
+					width: toRem(255);
+					height: toRem(255);
+				}
+				@include min-desktop-xl{
+					width: toRem(326);
+					height: toRem(326);
+				}
+			}
+			background-color: #00591d;
+			border-radius: inherit;
+			img{
+				@include desktop{
+					max-width: toRem(90);
+				}
+				@include min-desktop{
+					max-width: toRem(120);
+				}
+				@include min-desktop-xl{
+					max-width: toRem(170);
+				}
+			}
+		}
+		&__title{
+			color: $color-yellow;
+			@include min-tablet{
+				font-size: toRem(35);
+			}
+		}
+		&__sub-title{
+			color: $color-white;
+			@include min-tablet{
+				font-size: toRem(22);
+			}
+		}
+	}
+}

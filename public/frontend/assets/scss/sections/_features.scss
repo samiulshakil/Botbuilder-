@@ -1,0 +1,12 @@
+/* Features Section Style */
+.features{
+    padding: toRem(50) 0;
+    @include min-tablet{
+        padding: toRem(100) 0;
+    }
+    .section-header__title{
+        @include min-desktop{
+            font-size: toRem(44);
+        }
+    }
+}

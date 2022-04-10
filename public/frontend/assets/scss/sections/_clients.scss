@@ -1,0 +1,19 @@
+/* Clients Section Style */
+.clients{
+    background-color: rgba($color-primary, $alpha: 0.1);
+    &__link{
+        padding-top: toRem(50);
+        padding-bottom: toRem(50);
+        opacity: 0.5;
+        @extend %transition;
+        &__image{
+            @include light-mode{
+                filter: invert(1);
+            }
+        }
+        &:focus-visible,
+        &:hover{
+            opacity: 1;
+        }
+    }
+}

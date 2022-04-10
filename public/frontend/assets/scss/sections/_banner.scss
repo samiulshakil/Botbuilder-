@@ -1,0 +1,33 @@
+/* Header Section Style */
+.banner{
+    &__animation{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        &__image{
+            height: 100%;
+        }
+    }
+    &__content{
+        padding: toRem(120) 0 toRem(400);
+    }
+    &__title{
+        color: $color-white;
+        font-size: toRem(20);
+        font-weight: 500;
+        letter-spacing: 4vw;
+        text-transform: uppercase;
+    }
+    &__logo{
+        margin-bottom: toRem(20);
+        &__image{
+            max-height: toRem(300);
+        }
+    }
+    &__buttons{
+        .primary-btn{
+            margin-bottom: toRem(20);
+        }
+    }
+}

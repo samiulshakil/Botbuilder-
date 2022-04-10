@@ -1,0 +1,20 @@
+/* About Section Style */
+.know{
+    padding: toRem(50) 0;
+    &__title{
+        font-size: toRem(50);
+        font-weight: $font-secondary;
+        font-weight: 600;
+        @include min-desktop{
+            font-size: toRem(72);
+        }
+    }
+    &__sub-title{
+        color: $color-yellow;
+        font-size: toRem(30);
+        font-weight: 500;
+        @include min-desktop{
+            font-size: toRem(42);
+        }
+    }
+}

@@ -1,0 +1,9 @@
+/* FAQ Section Style */
+.faq{
+    &__image__icon{
+        position: absolute;
+        width: toRem(250);
+        height: toRem(250);
+        background-image: linear-gradient( 283.67deg, #fee81d -5.05%, #00a41d 96.25%);
+    }
+}

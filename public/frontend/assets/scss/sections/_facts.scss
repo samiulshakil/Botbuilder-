@@ -1,0 +1,73 @@
+/* Facts Section Style */
+.facts{
+	padding: toRem(50) 0;
+	background-attachment: fixed;
+	&__title,
+	&__sub-title{
+		font-family: $font-secondary;
+	}
+	&__title{
+		font-weight: 600;
+		@include min-tablet{
+			font-size: toRem(40);
+		}
+		@include min-desktop-lg{
+			font-size: toRem(60);
+			padding: 0 toRem(17);
+		}
+	}
+	&__sub-title{
+		color: $color-yellow;
+		@include min-desktop-lg{
+			font-size: toRem(30);
+		}
+	}
+	&__card{
+		&-wrapper{
+			@extend %radius;
+			padding: 3px;
+			margin-bottom: toRem(30);
+			@extend %gradient-border;
+		}
+		@extend %shadow;
+		padding: toRem(60) toRem(30) toRem(30);
+		@include desktop-lg-to-desktop-xl{
+			padding-left: toRem(5);
+			padding-right: toRem(5);
+		}
+		position: relative;
+		background: url("../images/pattern/bg-pattern-dark.png") no-repeat center / cover;
+		background-attachment: fixed;
+		border-radius: inherit;
+		&__image{
+			&-wrapper{
+				@extend %gradient-border;
+				padding: 5px;
+				width: toRem(187);
+				height: toRem(187);
+				@include desktop-lg-to-desktop-xl{
+					width: toRem(180);
+					height: toRem(180);
+				}
+				margin-bottom: toRem(40);
+			}
+			background-color: $color-white;
+			border-radius: inherit;
+			img{
+				max-width: toRem(100);
+			}
+		}
+		&__title,
+		&__text{
+			font-weight: 600;
+			font-family: $font-secondary;
+		}
+		&__title{
+			font-size: toRem(24);
+		}
+		&__text{
+			color: $color-white;
+			font-size: toRem(20);
+		}
+	}
+}

@@ -1,0 +1,397 @@
+/* Reset CSS */
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-tap-highlight-color: transparent;
+}
+
+::selection{
+	color: $color-white;
+	background: $color-primary;
+}
+
+html,
+body{
+	scroll-behavior: smooth;
+}
+
+html{
+	font-size: 16px;
+	text-size-adjust: none;
+}
+
+body {
+	color: $color-border;
+	font-weight: 400;
+	line-height: 1.4;
+	font-family: $font-primary;
+	background-color: $color-bg;
+	@include light-mode{
+		color: $color-text;
+		background-color: $color-bg-light;
+	}
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+	text-decoration: none;
+	color: unset;
+}
+
+button,
+button:hover,
+button:focus,
+button:active {
+	outline: none;
+}
+
+input:-webkit-autofill{
+	-webkit-text-fill-color: unset;
+	transition: background-color 5000s;
+}
+
+ul,
+ol {
+	list-style: none;
+}
+
+img{
+	object-fit: cover;
+}
+
+.user-select-none{
+	pointer-events: none;
+}
+
+.list-inline{
+	font-size: 0;
+	&-item{
+		font-size: 1rem;
+	}
+}
+
+/* Custom Container Style */
+.container{
+	@include min-desktop-lg{
+		max-width: 1160px;
+	}
+}
+
+/* Veno Box Style */
+.vbox{
+	&-close{
+		top: 2%;
+		right: 2%;
+		width: toRem(50);
+		height: toRem(50);
+		border-radius: 50%;
+		border: 3px solid $color-shadow;
+		padding: 0;
+		padding-top: toRem(15);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: 3rem;
+		background: $color-primary !important;
+		color: $color-white !important;
+	}
+	&-preloader .sk{
+		&-child,
+		&-rect,
+		&-cube,
+		&-spinner,
+		&-rotating-plane{
+			background: $color-primary !important;
+		}
+	}
+	&-next,
+	&-prev{
+		width: 3rem;
+		height: 3rem;
+		span{
+			width: 2rem;
+			height: 2rem;
+			border-width: 4px;
+			border-top-color: $color-primary !important;
+			border-right-color: $color-primary !important;
+		}
+	}
+}
+
+.preloader,
+.page-border{
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+
+/* Preloader Section Style */
+.preloader{
+	z-index: 9999;
+	background-color: #010002;
+	background-position: center;
+	background-size: 100%;
+	@include min-tablet{
+		background-size: cover;
+		background-repeat: no-repeat;
+	}
+}
+
+/* Animated Page Border Section Style */
+.page-border{
+	z-index: 99999;
+	padding: toRem(10);
+	user-select: none;
+	pointer-events: none;
+	&__line{
+		&::after{
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 0;
+			max-width: calc(100% - 60px);
+			height: 1px;
+			background-color: rgba($color-white, $alpha: 0.3);
+			animation: horizontal_line 1.6s linear forwards;
+			@keyframes horizontal_line {
+				0%{
+					width: 0;
+				}
+				100%{
+					width: 100%;
+				}
+			}
+		}
+		&__shape{
+			&__icon{
+				width: toRem(20);
+			}
+		}
+		&__top{
+			.page-border__line__shape{
+				&--left{
+					transform: rotate(-45deg);
+				}
+				&--right{
+					transform: rotate(45deg);
+				}
+			}
+		}
+		&__bottom{
+			.page-border__line__shape{
+				&--left{
+					transform: rotate(-145deg);
+				}
+				&--right{
+					transform: rotate(145deg);
+				}
+			}
+		}
+	}
+	&__horizontal{
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: toRem(10);
+		.page-border__line{
+			&::before{
+				content: "";
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height: 0;
+				max-height: calc(100% - 60px);
+				width: 1px;
+				background-color: rgba($color-white, $alpha: 0.3);
+				animation: vertical_line 1.6s linear forwards;
+				@keyframes vertical_line {
+					0%{
+						height: 0;
+					}
+					100%{
+						height: 100%;
+					}
+				}
+			}
+			&__shape{
+				opacity: 0;
+				visibility: hidden;
+				user-select: none;
+				pointer-events: none;
+			}
+		}
+	}
+}
+
+/* Common Section Gap Style */
+.section-gap{
+	padding: 6rem 0;
+	@include desktop{
+		padding: 3rem 0;
+	}
+	&--fix{
+		padding-bottom: calc(6rem - 30px);
+		@include desktop{
+			padding-bottom: calc(3rem - 30px);
+		}
+	}
+}
+
+/* Common Section Heading Style */
+.section-header{
+	&__highlight{
+		&__text{
+			text-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+			text-transform: uppercase;
+			font-size: toRem(16);
+			font-weight: 500;
+			background-image: linear-gradient( 50deg, #fee81d, #00a41d 33%, #ffe100 67%, #00ad1d 100%);
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+			background-clip: text;
+			&::selection{
+				-webkit-text-fill-color: initial;
+			}
+		}
+	}
+	&__title{
+		color: $color-primary;
+		font-size: toRem(36);
+		font-weight: 500;
+		letter-spacing: 1.755px;
+		text-transform: uppercase;
+	}
+	&__sub-title{
+		color: $color-white;
+		@include light-mode{
+			color: $color-text;
+		}
+		@include min-tablet{
+			font-size: toRem(30);
+		}
+	}
+	&__text{
+		@include min-tablet{
+			font-size: toRem(21);
+		}
+	}
+}
+
+.primary-text{
+	color: $color-primary;
+}
+
+.transparent-text{
+	color: transparent;
+}
+
+.gradient-circle{
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	background-image: linear-gradient( 50deg, #fee81d, #00a41d 33%, #ffe100 67%, #00ad1d 100%);
+	width: toRem(16);
+	height: toRem(16);
+	border-radius: 50%;
+	&::after{
+		display: block;
+		content: "";
+		position: absolute;
+		background-color: $color-white;
+		width: 50%;
+		height: 50%;
+		border-radius: 50%;
+	}
+}
+
+/* Common Section Colorful Border Style */
+.border-bg{
+	background-image: url("../images/pattern/border-pattern.png");
+	background-size: auto toRem(2);
+	background-position: top;
+	background-repeat: repeat-x;
+}
+
+/* Common Background Dark Pattern Style */
+.dark-pattern{
+	background-image: url("../images/pattern/bg-pattern-dark.png");
+	@include light-mode{
+		background-image: url("../images/pattern/bg-pattern-white.png");
+	}
+	background-repeat: no-repeat;
+	background-position: center;
+    background-size: cover;
+}
+
+/* Common Background White Pattern Style */
+.white-pattern{
+	background-image: url("../images/pattern/bg-pattern-white.png");
+	@include light-mode{
+		background-image: url("../images/pattern/bg-pattern-dark.png");
+	}
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+}
+
+.bg-overlay{
+	background-color: rgba($color-yellow, $alpha: 0.03);
+	background-blend-mode: overlay;
+	margin-bottom: -2px;
+}
+
+.social-list{
+	&__item{
+		&:not(:first-child){
+			margin-left: toRem(10);
+		}
+	}
+	&__link{
+		display: inline-block;
+		font-size: toRem(18);
+		padding: 5px;
+		transform: scale(1) rotate(0);
+		transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+		&:hover,
+		&:active,
+		&:focus,
+		&:focus-visible{
+			color: $color-primary;
+		}
+		@include min-tablet{
+			&:hover,
+			&:focus-visible{
+				transform: scale(1.1) rotate(3deg);
+			}
+		}
+		@include tablet{
+			transition-duration: 0.15s;
+			&:active{
+				transform: scale(1.1) rotate(3deg);
+			}
+		}
+	}
+}
+
+/* Page Wrapper Style */
+.page-wrapper{
+	background-image: url('../images/pattern/bg-pattern-dark.png');
+	@include light-mode{
+		background-image: url('../images/pattern/bg-pattern-white.png');
+	}
+	background-position: center;
+	background-repeat: repeat;
+	background-attachment: fixed;
+	background-size: cover;
+}

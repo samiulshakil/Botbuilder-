@@ -1,0 +1,38 @@
+/* Strength Section Style */
+.strength{
+	@include min-desktop-lg{
+		padding: toRem(150) 0;
+	}
+	&__card{
+		font-family: $font-secondary;
+		&::before{
+			position: absolute;
+			top: toRem(50);
+			left: toRem(60);
+			width: 100%;
+			height: 2px;
+			background-color: $color-primary;
+			z-index: -1;
+			@include min-desktop{
+				content: "";
+			}
+		}
+		&:last-child{
+			&::before{
+				display: none;
+			}
+		}
+		&__iamge{
+			margin-bottom: toRem(40);
+		}
+		&__sub-title{
+			font-size: toRem(24);
+			font-weight: 300;
+			margin-bottom: toRem(10);
+		}
+		&__title{
+			font-size: toRem(35);
+			font-weight: 600;
+		}
+	}
+}

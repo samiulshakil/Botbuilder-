@@ -1,0 +1,32 @@
+/* Common Accordion's Style */
+.accordion{
+    .card{
+        border-color: rgba($color-white, $alpha: 0.1);
+        @include light-mode{
+            border-color: rgba($color-black, $alpha: 0.1);
+        }
+        &-header .btn{
+            color: $color-white;
+            @include light-mode{
+                color: $color-text;
+            }
+            font-family: $font-secondary;
+            font-size: toRem(28);
+            .btn-icon{
+                &--hide{
+                    display: none;
+                }
+            }
+            &[aria-expanded="true"]{
+                .btn-icon{
+                    &--show{
+                        display: none;
+                    }
+                    &--hide{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

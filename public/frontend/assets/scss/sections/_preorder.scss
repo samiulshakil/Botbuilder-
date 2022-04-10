@@ -1,0 +1,12 @@
+/* Preorder Section Style */
+.preorder{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    padding: toRem(200) 0;
+    &-card{
+        color: $color-white;
+        padding: toRem(40);
+        background: url('../images/card/card-mask.png') no-repeat center / cover;
+    }
+}

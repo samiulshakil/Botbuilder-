@@ -1,0 +1,65 @@
+/* About Section Style */
+.about{
+    padding: toRem(80) 0;
+    .partners__card{
+        &-wrapper{
+            margin-bottom: toRem(80);
+            @extend %shadow;
+            @extend %radius;
+        }
+        padding: toRem(15);
+        min-height: toRem(200);
+        @include min-desktop{
+            min-height: toRem(260);
+        }
+    }
+    &__card{
+        @include desktop-lg{
+            margin-bottom: toRem(30);
+        }
+        padding: toRem(45) toRem(15);
+        background-color: $color-white;
+        @include min-desktop-lg{
+            padding: toRem(45) toRem(60);
+        }
+        flex: 1 1 auto;
+        @extend %shadow;
+        @extend %radius;
+        &__image{
+            margin-bottom: toRem(30);
+        }
+        &__title{
+            color: $color-text;
+            font-size: toRem(20);
+            font-family: $font-secondary;
+            font-weight: 600;
+            @include min-tablet{
+                font-size: toRem(24);
+            }
+            &--lg{
+                font-size: toRem(38);
+                font-weight: 800;
+            }
+            &__small{
+                font-size: toRem(12);
+                word-wrap: anywhere;
+            }
+        }
+        &__text,
+        &__link{
+            font-size: toRem(18);
+            font-family: $font-secondary;
+            font-weight: 600;
+        }
+        &__text{
+            color: $color-gray
+        }
+        &__link{
+            color: $color-primary;
+            &:hover{
+                color: $color-primary;
+                text-decoration: underline;
+            }
+        }
+    }
+}

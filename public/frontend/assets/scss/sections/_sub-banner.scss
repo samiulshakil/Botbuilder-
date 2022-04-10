@@ -1,0 +1,21 @@
+/* Sub Banner Section Style */
+.sub-banner{
+    color: $color-white;
+    background: url("../images/banner/Bot-header.png") no-repeat center / cover;
+    &__container{
+        text-shadow: 0 0 10px rgba($color-text, $alpha: 0.3);
+        padding: toRem(100) 0;
+        @include min-mobile{
+            position: absolute;
+            top: 0;
+            position: absolute;
+            padding-top: toRem(200);
+        }
+    }
+    &__image{
+        @include mobile{
+            position: absolute;
+            height: 100%;
+        }
+    }
+}
